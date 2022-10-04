@@ -38,7 +38,7 @@ def get_task(task_id):
     task = list(filter(lambda t: t['id'] == task_id, tasks))
     if len(task) == 0:
         abort(404)
-    return jsonify({'task': task[0]})
+    return task[0]
 
 
 
