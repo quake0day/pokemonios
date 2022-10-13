@@ -28,10 +28,12 @@ f = open ('pokemon.json', "r")
 # Reading from file
 tasks = json.loads(f.read())
 
+f = open ('editions.json', "r")
+tasks2 = json.loads(f.read())
 
-@app.route('/todo/api/v1.0/tasks', methods=['GET'])
+@app.route('/quran-api/v1.0/', methods=['GET'])
 def get_tasks():
-    return jsonify({'tasks': tasks})
+    return jsonify(tasks2)
 
 @app.route('/pokemon/api/v1.0/pokemon_id/<int:task_id>', methods=['GET'])
 def get_task(task_id):
